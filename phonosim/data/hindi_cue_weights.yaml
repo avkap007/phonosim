@@ -1,0 +1,43 @@
+# Hindi L1 cue-weight profile (OUR contribution — not PanPhon stock weights).
+#
+# Design intent (Week 4 / Dr. Wang cue-weighting notes):
+# Hindi listeners are tuned to phonemic aspiration and retroflexion.
+# Relative to PanPhon's NLP-oriented weights (where sg/voi are very cheap at 0.125),
+# we UPWEIGHT spread-glottis and voicing (aspiration/VOT cues) and keep place
+# features (ant, cor, distr, lab) relatively salient for retroflex vs alveolar.
+#
+# These are informed starting values for the toolkit — editable by researchers.
+# Compare against mode="panphon" and mode="hamming" in get_similarity().
+
+name: hindi
+description: >
+  Cue weights reflecting Hindi L1 attention to aspiration (sg, voi) and place
+  (retroflex/alveolar), for English contrast difficulty scoring.
+
+weights:
+  syl: 1.0
+  son: 1.0
+  cons: 1.0
+  cont: 0.5
+  delrel: 0.35
+  lat: 0.25
+  nas: 0.35
+  strid: 0.25
+  # Upweighted vs PanPhon 0.125 — Hindi marks aspiration/voicing phonemically
+  voi: 0.6
+  sg: 0.7
+  cg: 0.3
+  # Place cues matter for retroflex contrasts
+  ant: 0.45
+  cor: 0.45
+  distr: 0.4
+  lab: 0.35
+  hi: 0.25
+  lo: 0.25
+  back: 0.25
+  round: 0.25
+  tense: 0.25
+  long: 0.15
+  velaric: 0.25
+  hitone: 0.1
+  hireg: 0.1
