@@ -9,3 +9,13 @@ build/
 .DS_Store
 examples/*_psychopy.csv
 examples/*_jspsych.json
+
+# Corpus and large downloads: never commit (L2-ARCTIC is CC BY-NC, ~7.5 GB)
+l2arctic_release_v5.0/
+l2arctic_release_v5.0.zip
+icphs2027_kit.zip
+# Analysis outputs from real data
+icphs2027/results*/
+icphs2027/phones*.csv
+# Working notes, keep local
+icphs2027/ANALYSIS_PLAN.md

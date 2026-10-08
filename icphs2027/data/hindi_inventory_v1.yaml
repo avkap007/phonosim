@@ -1,0 +1,116 @@
+# Curated English → Hindi category mappings for the locked study contrasts
+# and nearby English consonants. Not a full phonology engine — a researcher table.
+#
+# Assimilation types:
+#   merged                 — English phone lands in a Hindi category that also covers another English phone
+#   exists_different_cues  — contrast exists in Hindi but cues/implementation differ (e.g. aspiration)
+#   exists_similar         — reasonably close match
+#   no_equivalent          — no direct Hindi category
+
+l1: hindi
+notes: >
+  Hindi has a labiodental approximant ʋ that covers much of the English v/w space
+  (single-category assimilation). Aspiration is phonemic (p vs pʰ) but with different
+  VOT/cue weighting than English. Retroflex series (ʈ ɖ ɽ etc.) exists; English ɹ
+  is not a match for ɽ.
+
+english_to_hindi:
+  p:
+    closest_hindi: p
+    assimilation_type: exists_different_cues
+    notes: Hindi unaspirated p; English aspirated allophone in many positions differs in VOT.
+  pʰ:
+    closest_hindi: pʰ
+    assimilation_type: exists_different_cues
+    notes: Hindi has phonemic aspiration; cue implementation still differs from English.
+  b:
+    closest_hindi: b
+    assimilation_type: exists_similar
+  t:
+    closest_hindi: t
+    assimilation_type: exists_different_cues
+  tʰ:
+    closest_hindi: tʰ
+    assimilation_type: exists_different_cues
+  d:
+    closest_hindi: d
+    assimilation_type: exists_similar
+  k:
+    closest_hindi: k
+    assimilation_type: exists_different_cues
+  kʰ:
+    closest_hindi: kʰ
+    assimilation_type: exists_different_cues
+  ɡ:
+    closest_hindi: ɡ
+    assimilation_type: exists_similar
+  v:
+    closest_hindi: ʋ
+    assimilation_type: merged
+    notes: English v typically assimilates to Hindi ʋ (same category as w).
+  w:
+    closest_hindi: ʋ
+    assimilation_type: merged
+    notes: English w typically assimilates to Hindi ʋ (same category as v).
+  f:
+    closest_hindi: pʰ
+    assimilation_type: no_equivalent
+    notes: Often approximated; not a core Hindi phoneme for all speakers.
+  s:
+    closest_hindi: s
+    assimilation_type: exists_similar
+  ʃ:
+    closest_hindi: ʃ
+    assimilation_type: exists_similar
+  ɹ:
+    closest_hindi: [r, ɽ]
+    assimilation_type: no_equivalent
+    notes: English approximant ɹ; not the Hindi tap/trill or retroflex flap.
+  r:
+    closest_hindi: r
+    assimilation_type: exists_similar
+    notes: IPA trill — not English r; included to avoid symbol confusion.
+  ɽ:
+    closest_hindi: ɽ
+    assimilation_type: exists_similar
+    notes: Hindi retroflex flap; English listeners may confuse with ɹ, not vice mapping.
+  l:
+    closest_hindi: l
+    assimilation_type: exists_similar
+  m:
+    closest_hindi: m
+    assimilation_type: exists_similar
+  n:
+    closest_hindi: n
+    assimilation_type: exists_similar
+  ŋ:
+    closest_hindi: ŋ
+    assimilation_type: exists_similar
+  t͡ʃ:
+    closest_hindi: t͡ʃ
+    assimilation_type: exists_similar
+  d͡ʒ:
+    closest_hindi: d͡ʒ
+    assimilation_type: exists_similar
+  h:
+    closest_hindi: ɦ
+    assimilation_type: exists_similar
+  θ:
+    closest_hindi: tʰ
+    assimilation_type: no_equivalent
+  ð:
+    closest_hindi: d
+    assimilation_type: no_equivalent
+  z:
+    closest_hindi: d͡ʒ
+    assimilation_type: no_equivalent
+    notes: /z/ often approximated; not native for many Hindi speakers.
+  ʒ:
+    closest_hindi: d͡ʒ
+    assimilation_type: no_equivalent
+
+# Locked study contrasts (see plan)
+study_contrasts:
+  - [p, pʰ]
+  - [v, w]
+  - [ɽ, ɹ]

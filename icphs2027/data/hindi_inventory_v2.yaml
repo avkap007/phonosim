@@ -1,0 +1,73 @@
+# English -> Hindi category table, v2 (literature-audited, frozen before any L2-ARCTIC analysis).
+#
+# One row per English consonant phoneme (the 24 ARPAbet consonants). English has no
+# aspiration contrast, so the v1 aspirated rows (pʰ, tʰ, kʰ) are folded into p, t, k.
+# v1 rows for r and ɽ are dropped: neither is an English phoneme.
+#
+# Variety: educated urban Standard Hindi (Ohala 1994/1999) as spoken by adult
+# Hindi-L1 users of English. Variety-dependent alternatives are listed under
+# `alt` and are NOT used in the primary analysis.
+#
+# confidence: high / medium / low, judged from the strength of the sources.
+# "2nd" = claim known via a secondary synthesis; check against the original.
+
+l1: hindi
+version: 2
+frozen_before_data: true
+
+english_to_hindi:
+  p:   {hindi: p,   type: exists_different_cues, confidence: high,
+        why: "Indian English voiceless stops are short-lag (unaspirated)",
+        cite: ["Gargesh 2008: 237 (2nd)", "Bansal 1990: 225 (2nd)", "Sirsa & Redford 2013"]}
+  b:   {hindi: b,   type: exists_similar, confidence: high,
+        why: "Prevoiced in Hindi and Indian English", cite: ["Ohala 1994"]}
+  t:   {hindi: ʈ,   type: exists_different_cues, confidence: high,
+        why: "English alveolar t realized as retroflex in Indian English",
+        cite: ["Sirsa & Redford 2013", "Jain et al. 2022", "Verma & Chawla 2003"],
+        note: "Sailaja 2009: 21-22 (2nd) reports alveolar in formal speech"}
+  d:   {hindi: ɖ,   type: exists_different_cues, confidence: high,
+        why: "As for t", cite: ["Sirsa & Redford 2013", "Jain et al. 2022"]}
+  k:   {hindi: k,   type: exists_different_cues, confidence: high,
+        why: "Short-lag", cite: ["Gargesh 2008: 237 (2nd)"]}
+  ɡ:   {hindi: ɡ,   type: exists_similar, confidence: high, cite: ["Ohala 1994"]}
+  f:   {hindi: f,   type: exists_similar, confidence: medium,
+        why: "Loan phoneme, well established in Modern Standard Hindi; f->pʰ not observed in Indic TIMIT",
+        cite: ["Ohala 1994: 36", "Jain et al. 2022"], alt: pʰ}
+  v:   {hindi: ʋ,   type: merged, confidence: high,
+        why: "Single-category assimilation of v and w to ʋ (perception and production)",
+        cite: ["Grover et al. 2021", "Grover et al. 2025", "Iverson et al. 2011", "Fuchs 2019", "Ohala 1994: 37"]}
+  w:   {hindi: ʋ,   type: merged, confidence: high,
+        why: "As for v", cite: ["Grover et al. 2021", "Grover et al. 2025", "Iverson et al. 2011", "Fuchs 2019"],
+        note: "Dissent: Venkateswaran & Wayland 2026 (ASR-posterior method)"}
+  θ:   {hindi: t̪ʰ,  type: no_equivalent, confidence: high,
+        why: "Dental aspirated stop for Indo-Aryan L1 speakers",
+        cite: ["Sailaja 2009: 21 (2nd)", "Gargesh 2008: 238 (2nd)", "Jain et al. 2022"]}
+  ð:   {hindi: d̪,   type: no_equivalent, confidence: high,
+        why: "Dental voiced stop; [ð] almost absent in Indian English",
+        cite: ["Sailaja 2009: 21 (2nd)", "Jain et al. 2022"]}
+  s:   {hindi: s,   type: exists_similar, confidence: high,
+        why: "Same category; lower spectral centre of gravity", cite: ["Sirsa & Redford 2013"]}
+  z:   {hindi: z,   type: exists_similar, confidence: medium,
+        why: "Loan phoneme, well established in Modern Standard Hindi",
+        cite: ["Ohala 1994: 36"], alt: d͡ʒ}
+  ʃ:   {hindi: ʃ,   type: exists_similar, confidence: medium,
+        why: "Loan phoneme, well established; s/ʃ merger only in non-standard varieties (secondary sources)",
+        cite: ["Ohala 1994: 36"], alt: s}
+  ʒ:   {hindi: d͡ʒ,  type: no_equivalent, confidence: low,
+        why: "Not in Hindi inventory; Indian English realizations vary",
+        cite: ["Ohala 1994", "Sailaja 2009 (2nd)"]}
+  h:   {hindi: ɦ,   type: exists_different_cues, confidence: high,
+        why: "Hindi has only voiced ɦ", cite: ["Ohala 1994: 35"]}
+  t͡ʃ:  {hindi: t͡ʃ,  type: exists_similar, confidence: high, cite: ["Ohala 1994"]}
+  d͡ʒ:  {hindi: d͡ʒ,  type: exists_similar, confidence: high, cite: ["Ohala 1994"]}
+  m:   {hindi: m,   type: exists_similar, confidence: high, cite: ["Ohala 1994"]}
+  n:   {hindi: n,   type: exists_similar, confidence: high, cite: ["Ohala 1994"],
+        note: "Hindi n is dental; not visible in ARPAbet"}
+  ŋ:   {hindi: ŋ,   type: exists_different_cues, confidence: medium,
+        why: "Hindi ŋ occurs only before velars; no word-final model", cite: ["Ohala 1994: 37"]}
+  l:   {hindi: l,   type: exists_similar, confidence: high,
+        why: "Clear l in all positions", cite: ["Brozbă 2011", "Sailaja 2009 (2nd)"]}
+  ɹ:   {hindi: r,   type: exists_different_cues, confidence: medium,
+        why: "Hindi rhotic is a tap/trill; Indian English rhoticity varies",
+        cite: ["Ohala 1994: 37", "Sailaja 2009: 19 (2nd)", "Chand 2010 (2nd)"]}
+  j:   {hindi: j,   type: exists_similar, confidence: high, cite: ["Ohala 1994: 35"]}

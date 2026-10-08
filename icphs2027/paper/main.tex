@@ -1,0 +1,108 @@
+% ICPhS 2027 submission draft. Compile with XeLaTeX (IPA is typed as Unicode).
+% Needs icphs2027.sty from the official template zip in this folder.
+% Every [XX] / \res{...} is a placeholder to fill from code output (results.json,
+% table_top_pairs.tex, fig_distance_vs_rate.pdf). Search for "XX" before submitting.
+\documentclass[a4paper,11pt,twocolumn]{article}
+
+\usepackage{icphs2027}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% IPA font: first one installed wins (Overleaf has Doulos SIL and Charis SIL).
+\IfFontExistsTF{Doulos SIL}{\newfontfamily\ipafont{Doulos SIL}}{%
+  \IfFontExistsTF{Charis SIL}{\newfontfamily\ipafont{Charis SIL}}{%
+    \newfontfamily\ipafont{FreeSerif}}}
+\newcommand{\ipa}[1]{{\ipafont #1}}
+\newcommand{\res}[1]{\textbf{[#1]}} % placeholder for a number from results.json
+
+\hyphenpenalty=10000
+
+\title{Feature distance through the L1: Predicting Hindi-L1 consonant substitutions in non-native English}
+\author{XXX}
+\organization{XXX}
+\email{XXX}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Models of second-language speech locate difficulty in how target sounds map onto native categories, yet computational similarity scores are usually language-neutral. We compare a language-neutral articulatory feature distance with an L1-aware distance computed between the nearest Hindi categories of two English sounds, as a predictor of which English consonants Hindi-L1 speakers produce as other consonants. Using hand-annotated substitutions from L2-ARCTIC (24 speakers, six L1s), we model counts for all 552 ordered consonant pairs. The Hindi-projected distance, derived from a literature-sourced mapping fixed before analysis, \res{improved} prediction for Hindi speakers over English distance alone (IRR = \res{XX}, 95\% CI \res{XX}) and \res{did / did not} predict substitutions for the other five L1 groups (interaction IRR = \res{XX}). \ipa{/v/}--\ipa{/w/}, 7 features apart in English but a single Hindi category, was \res{XX}. L1 category structure explains errors that a language-neutral distance misses.
+\end{abstract}
+
+\keywords{L2 phonetics, Hindi, Indian English, cross-language similarity, mispronunciation}
+
+\section{Introduction}
+
+Hindi-L1 speakers of English are known to merge \ipa{/v/} and \ipa{/w/}, in both perception \cite{Grover:2021,Iverson:2011} and production \cite{Grover:2025,Fuchs:2019}. The Speech Learning Model (SLM-r) \cite{Flege:1995,FlegeBohn:2021} and the Perceptual Assimilation Model (PAM) \cite{Best:1995,TylerBest:2024} explain such patterns through the mapping between L2 sounds and native categories: Hindi has a single labiodental approximant \ipa{/ʋ/} \cite{Ohala:1994}, to which both English phones assimilate.
+
+Computational similarity tools rarely encode this. Articulatory feature distances such as PanPhon's \cite{Mortensen:2016} are language-neutral: \ipa{/v/} and \ipa{/w/} differ on 7 of 24 features, above the median of 6 for English consonant pairs, so a distance score predicts that the pair should be easy for everyone. In perception, assimilation-based predictors capture L1-specific discrimination differences that language-neutral acoustic distances miss \cite{MilletDunbar:2022}.
+
+We ask the production-side question with a simple, theory-derived modification. SLM-r holds that the predictive distance is between L2 sounds and their nearest L1 categories \cite{FlegeBohn:2021}. We therefore compute the same feature distance a second time, between the Hindi categories that two English consonants map onto, and test whether this L1-aware distance predicts the substitutions that annotators transcribed in Hindi-L1 English, and whether it does so for Hindi speakers specifically. The applied motivation is speech technology: in short commands and wake words the phoneme carries most of the signal, and knowing which confusions a speaker population produces indicates which items to confirm, avoid or oversample.
+
+\section{An English-to-Hindi category table}
+
+The L1 layer maps each English consonant to its nearest Hindi category in educated urban Standard Hindi \cite{Ohala:1994}, drawing on Indian English phonetics. English \ipa{/v/} and \ipa{/w/} map to \ipa{/ʋ/} \cite{Grover:2021,Grover:2025,Fuchs:2019}. English alveolar \ipa{/t d/} are realised as retroflex \ipa{[ʈ ɖ]} \cite{SirsaRedford:2013,Jain:2022}, while \ipa{/θ ð/} are realised as dental stops \ipa{[t̪ʰ d̪]} \cite{Sailaja:2009,Jain:2022}; because Hindi contrasts dental and retroflex place, \ipa{θ}--\ipa{t} and \ipa{ð}--\ipa{d} remain distinct after mapping. \ipa{/f z ʃ/} map to themselves, as loan phonemes well established in Standard Hindi \cite{Ohala:1994}. \ipa{/ʒ/}, absent from Hindi, maps to \ipa{/d͡ʒ/}; English \ipa{/ɹ/} maps to the Hindi tap/trill \ipa{/r/}. Voiceless stops map to Hindi unaspirated stops, since Indian English voiceless stops are short-lag \cite{SirsaRedford:2013}. Each entry carries its source and a confidence rating in the released table, which was revised from an earlier, unsourced version after a literature audit and frozen before the corpus was analysed.
+
+\section{Method}
+
+\subsection{Data}
+
+L2-ARCTIC \cite{Zhao:2018} contains read English from 24 speakers, four (two female, two male) per L1: Hindi, Mandarin, Korean, Spanish, Arabic and Vietnamese. About 150 utterances per speaker were hand-annotated for phone substitutions, deletions and additions, labelled with expected and perceived ARPAbet phones and an optional mark for accented deviations. Fifty of each speaker's utterances were chosen to contain sounds expected to be difficult for that L1; to avoid this L1-informed selection, the main analysis uses the \res{XX} utterances annotated in all L1 groups.
+
+\subsection{Predictors}
+
+Using the open-source phonosim toolkit\footnote{Anonymised repository: \url{https://anonymous.4open.science/r/XXX}}, which wraps PanPhon, we computed for each ordered pair of the 24 English consonants (X expected, Y produced; 552 pairs):
+
+\begin{itemize}
+\item \textbf{English distance}: the number of PanPhon features (of 24) on which X and Y differ.
+\item \textbf{Hindi-projected distance}: the same count between the Hindi categories of X and Y (e.g.\ \ipa{v}--\ipa{w}: 7 vs.\ 0; \ipa{f}--\ipa{v}: 1 vs.\ 7).
+\end{itemize}
+
+The two differ for 136 of 276 unordered pairs ($r = 0.78$). We enter their difference, \emph{L1 compression}, alongside English distance; this is a reparametrisation of the two-distance model, whose coefficient reads as the effect of Hindi pulling a pair together. Weighted variants (PanPhon stock weights; a Hindi cue-weight profile) and the earlier binary shared-category flag serve as robustness checks.
+
+\subsection{Analysis}
+
+The unit is speaker $\times$ ordered pair; the outcome is the X$\to$Y substitution count, with the speaker's X tokens as exposure. Negative binomial models with speaker-clustered standard errors test (H1) whether compression improves on English distance for Hindi speakers, and (H2), across all speakers, whether the compression effect is larger for Hindi speakers than for the other five groups, which control for errors common to all learners (e.g.\ \ipa{ð}$\to$\ipa{d}, \ipa{z}$\to$\ipa{s} \cite{Zhao:2018}). Because a \ipa{[ʋ]} realisation may be annotated as an accented \ipa{v} or \ipa{w} rather than a substitution, \ipa{v} and \ipa{w} are also analysed per target, counting partner substitutions and accented distortions. Given four Hindi speakers, we report per-speaker estimates. The specification was fixed in advance and all estimates are reported.
+
+\section{Results}
+
+The analysis covered \res{XX} consonant tokens and \res{XX} substitutions (Hindi: \res{XX}).
+
+\textbf{English distance is a general predictor.} Substitution rate fell with English distance in every L1 group (Spearman $\rho$ \res{XX} to \res{XX}; Hindi \res{XX}).
+
+\textbf{The L1-aware distance adds Hindi-specific signal.} For Hindi speakers, compression \res{improved} fit over English distance ($\Delta$AIC = \res{XX}; IRR per feature = \res{XX}, 95\% CI [\res{XX}, \res{XX}]), \res{in all four speakers} (IRRs \res{XX}--\res{XX}). Across all speakers the compression $\times$ Hindi interaction was IRR = \res{XX} [\res{XX}, \res{XX}]. Results \res{held} under both weighted distances, with the earlier binary flag, and when accented deviations were excluded (\res{XX}).
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=8cm]{fig_compression.pdf}
+\caption{Hindi minus mean other-L1 substitution rate for each ordered pair, by L1 compression (English minus Hindi-projected distance).}\label{fig:comp}
+\end{center}
+\end{figure}
+
+\textbf{\ipa{v} and \ipa{w}.} Hindi speakers produced \ipa{v} as \ipa{w} or as an accented \ipa{v} in \res{XX}\% of tokens, and \ipa{w} as \ipa{v} or accented \ipa{w} in \res{XX}\%, against \res{XX}\% and \res{XX}\% for the other groups (Fig.~\ref{fig:comp}, Table~\ref{tab:top}).
+
+\begin{table}[!ht]
+\begin{center}
+\input{table_top_pairs.tex}
+\caption{Most frequent Hindi-L1 substitutions: English and Hindi-projected feature distance, and rates for Hindi and the mean of the other L1s.}\label{tab:top}
+\end{center}
+\end{table}
+
+\section{Discussion}
+
+A language-neutral feature distance captures which substitutions any learner is likely to make. Computing the same distance through the learner's L1 categories, as SLM-r prescribes, \res{adds} the errors specific to a population. For \ipa{v}--\ipa{w} the two distances point in opposite directions, and the data side with the L1-aware one. The approach parallels assimilation-based prediction in perception \cite{MilletDunbar:2022}, here with a feature-based distance and production data.
+
+Four limitations bound the claims. With four Hindi speakers, estimates are imprecise and significant effects are likely inflated \cite{KirbySonderegger:2018}; the study is a proof of concept. The labels are annotators' judgements of production, so a merged realisation falling between two English categories may be labelled inconsistently. ARPAbet cannot encode aspiration, retroflexion or dentality, so the table's predictions on those dimensions enter only through feature distance. Finally, the table is literature-derived rather than measured; an assimilation task with Hindi-L1 listeners, now in preparation alongside an AXB discrimination study, will replace it with listener data and test the perception side.
+
+\section{Conclusion}
+
+Feature distance computed through Hindi categories \res{predicts} Hindi-L1 consonant substitutions that a language-neutral distance misses. For speech technology serving a known speaker population, the L1 category layer is a cheap and principled addition.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\theendnotes
+
+\end{document}
