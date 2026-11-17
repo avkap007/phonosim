@@ -1,0 +1,67 @@
+# Consonant inventories for the six L2-ARCTIC first languages.
+# Used by phonosim.l1.project to map English consonants onto L1 categories AUTOMATICALLY
+# (nearest phoneme by feature distance). Nobody hand-picks a mapping here.
+#
+# Inclusion rule (same for every language, fixed before any cross-L1 analysis):
+#   1. Every consonant phoneme in the cited source's inventory, in any syllable position.
+#   2. Glides (j, w, ɥ) are included when they occur as non-syllabic segments, even where
+#      the source analyses them as allophones of high vowels (Mandarin, Spanish).
+#   3. Loan phonemes are included only when the source treats them as established.
+#   4. Where major varieties differ and the L2-ARCTIC speakers' variety is undocumented,
+#      `primary` is the variety of the cited standard reference / largest speaker base,
+#      and `alt` is the other variety (sensitivity analysis only).
+#
+# STATUS OF SOURCES: inventories were entered from the standard descriptions listed
+# below, from memory of those sources. Check each against the original before citing
+# in the thesis (marked verify: true).
+
+hindi:
+  variety: "Educated urban Standard Hindi (same variety statement as hindi_inventory_v2.yaml)"
+  source: "Ohala 1999, Hindi, Handbook of the IPA; Ohala 1994"
+  verify: true
+  primary: [p, pʰ, b, b̤, t̪, t̪ʰ, d̪, d̪̤, ʈ, ʈʰ, ɖ, ɖ̤, t͡ʃ, t͡ʃʰ, d͡ʒ, d͡ʒ̤, k, kʰ, ɡ, ɡ̤,
+            m, n, ɳ, ŋ, f, s, z, ʃ, ɦ, ʋ, r, ɽ, ɽ̤, l, j]
+  notes: "f, z, ʃ kept as established loans and ŋ kept, to match the frozen v2 table. x, ɣ, q excluded (variety-dependent). Breathy-voiced stops are written with the breathy diacritic (b̤) because PanPhon does not parse ʱ."
+
+arabic:
+  variety: "Modern Standard Arabic as spoken by an educated speaker"
+  source: "Thelwall & Sa'adeddin 1990, Arabic, JIPA 20(2)"
+  verify: true
+  primary: [b, t, d, tˤ, dˤ, k, q, ʔ, f, θ, ð, ðˤ, s, z, sˤ, ʃ, x, ɣ, ħ, ʕ, h, d͡ʒ, m, n, l, r, w, j]
+  alt_variety: "Cairene-type colloquial (no interdentals, ɡ for d͡ʒ)"
+  alt_source: "Watson 2002, The Phonology and Morphology of Arabic"
+  alt: [b, t, d, tˤ, dˤ, k, ɡ, q, ʔ, f, s, z, sˤ, zˤ, ʃ, x, ɣ, ħ, ʕ, h, m, n, l, r, w, j]
+  notes: "Dialects of the four L2-ARCTIC Arabic speakers are undocumented."
+
+mandarin:
+  variety: "Standard Chinese (Beijing)"
+  source: "Lee & Zee 2003, Standard Chinese (Beijing), JIPA 33(1); glides per Duanmu 2007"
+  verify: true
+  primary: [p, pʰ, t, tʰ, k, kʰ, t͡s, t͡sʰ, ʈ͡ʂ, ʈ͡ʂʰ, t͡ɕ, t͡ɕʰ, f, s, ʂ, ɕ, x, m, n, ŋ, l, ɻ, j, w, ɥ]
+
+korean:
+  variety: "Standard Seoul Korean"
+  source: "Lee 1999, Korean, Handbook of the IPA"
+  verify: true
+  primary: [p, pʰ, p͈, t, tʰ, t͈, k, kʰ, k͈, t͡ɕ, t͡ɕʰ, t͈͡ɕ, s, s͈, h, m, n, ŋ, l, j, w]
+  notes: "Liquid entered as l (surface [ɾ] between vowels is allophonic). PanPhon has no tense (fortis) diacritic, so p͈ t͈ k͈ s͈ t͈͡ɕ collapse onto the plain series when loaded. English has no tense series, so this does not change any projection."
+
+spanish:
+  variety: "Latin American Spanish (seseo, yeismo)"
+  source: "Hualde 2005, The Sounds of Spanish"
+  verify: true
+  primary: [p, b, t̪, d̪, k, ɡ, t͡ʃ, f, s, x, ʝ, m, n, ɲ, l, ɾ, r, j, w]
+  alt_variety: "Castilian Spanish (adds θ and ʎ)"
+  alt_source: "Martinez-Celdran, Fernandez-Planas & Carrera-Sabate 2003, Castilian Spanish, JIPA 33(2)"
+  alt: [p, b, t̪, d̪, k, ɡ, t͡ʃ, f, θ, s, x, ʝ, m, n, ɲ, l, ʎ, ɾ, r, j, w]
+  notes: "Spirant allophones [β ð ɣ] of /b d ɡ/ are not phonemes and are excluded by rule 1."
+
+vietnamese:
+  variety: "Northern (Hanoi) Vietnamese"
+  source: "Kirby 2011, Vietnamese (Hanoi Vietnamese), JIPA 41(3)"
+  verify: true
+  primary: [ɓ, ɗ, t, tʰ, c, k, ʔ, m, n, ɲ, ŋ, f, v, s, z, x, ɣ, h, l, j, w]
+  alt_variety: "Southern (Saigon) Vietnamese"
+  alt_source: "Thompson 1965, A Vietnamese Grammar; Brunelle 2009"
+  alt: [ɓ, ɗ, t, tʰ, ʈ, c, k, ʔ, m, n, ɲ, ŋ, f, s, ʂ, x, ɣ, h, l, ɹ, j, w]
+  notes: "j and w occur as medial/final glides in Hanoi Vietnamese (rule 2)."
