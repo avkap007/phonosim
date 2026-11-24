@@ -38,3 +38,6 @@ axb_study/power/*.rds
 axb_study/experiment/jatos.js
 axb_study/analysis/fake_data/
 axb_study/analysis/results*/
+allophone/results*/
+phones_suitcase.csv
+l2arctic_release_v5.0/suitcase_corpus/

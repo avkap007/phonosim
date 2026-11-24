@@ -1,0 +1,181 @@
+l1,inventory_id,source,language,dialect,phoneme,allophones,marginal
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",b,b,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",d̙ˤ,d̙ˤ d̪̙ˤ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",d̪,d̪,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",d̪ʒ,d̪ʒ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",f,f,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",h,h,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",j,j,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",kʰ,kʰ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",l,l,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",lˤ,lˤ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",m,m,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",n̪,n̪,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",q,q,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",r,r,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",s,s,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",s̙ˤ,s̙ˤ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",t̪ʰ,t̪ʰ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",t̪̙ˤ,t̪̙ˤ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",w,w,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",xʀ̥,xʀ̥,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",z,z,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",ð̪,ð̪,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",ð̪̙ˤ,ð̪̙ˤ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",ħ,ħ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",ɣ,ɣ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",ʃ,ʃ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",ʔ,ʔ,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",ʕ̙,ʕ̙,FALSE
+arabic,2157,ph,Arabic,"Safad, Beirut, Damascus, Kuwait",θ̪,θ̪,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",b,b b̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",bː,bː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",b̤,b̤ b̤̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",d̠ʒ,d̠ʒ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",d̠ʒː,d̠ʒː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",d̤ʒ̤,d̤ʒ̤,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",d̤ʒ̤ː,d̤ʒ̤ː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",d̪,d̪ d̪̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",d̪ː,d̪ː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",d̪̤,d̪̤ d̪̤̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",d̪̤ː,d̪̤ː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",f,f,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",fː,fː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",h,h,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",j,j,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",k,k k̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",kʰ,kʰ k̚ʰ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",kʰː,kʰː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",kː,kː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",l,l,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",lː,lː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",m,m,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",mː,mː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",n,n ɽ̃ ɲ ɳ ŋ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",nː,nː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",p,p p̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",pʰ,pʰ p̚ʰ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",pʰː,pʰː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",pː,pː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",rː,rː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",s,s,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",sː,sː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",t̠ʃ,t̠ʃ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",t̠ʃʰ,t̠ʃʰ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",t̠ʃʰː,t̠ʃʰː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",t̠ʃː,t̠ʃː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",t̪,t̪ t̪̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",t̪ʰ,t̪ʰ t̪̚ʰ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",t̪ʰː,t̪ʰː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",t̪ː,t̪ː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",z,z,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",zː,zː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ŋ,ŋ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ŋː,ŋː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɖ,ɖ ɖ̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɖː,ɖː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɖ̤,ɖ̤ ɖ̤̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɖ̤ː,ɖ̤ː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɡ,ɡ ɡ̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɡː,ɡː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɡ̤,ɡ̤ ɡ̤̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɡ̤ː,ɡ̤ː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɽ,ɽ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɽ̤,ɽ̤,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ɾ,ɾ r,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ʃ,ʃ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ʃː,ʃː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ʈ,ʈ ʈ̚,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ʈʰ,ʈʰ ʈ̚ʰ,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ʈʰː,ʈʰː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ʈː,ʈː,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ʋ,ʋ v w,FALSE
+hindi,2190,ph,Hindi,"Standard Hindi (as spoken in Varanasi, Lucknow, Delhi etc.)",ʋː,ʋː,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),h,h ç x ɦ,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),k,k k̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),kʰ,kʰ k̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),k͉,k͉ ɡ k͉̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),l,l ɾ l ɭ ʎ,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),lː,lː lʎ,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),m,m,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),n,n ɲ,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),p,p p̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),pʰ,pʰ p̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),p͉,p͉ b p͉̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),s,s ɕʰ,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),s͉,s͉ z ɕ,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),t,t t̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),tɕ,tɕ t̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),tɕʰ,tɕʰ t̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),tʰ,tʰ t̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),t͉,t͉ d t͉̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),t͉ɕ͉,t͉ɕ͉ t̚,FALSE
+korean,2197,ph,Korean,Standard Korean (spoken in and around Seoul),ŋ,ŋ,FALSE
+mandarin,16,spa,Mandarin Chinese,NA,cç,cç ɟʝ,NA
+mandarin,16,spa,Mandarin Chinese,NA,cçʰ,cçʰ cçʰ,NA
+mandarin,16,spa,Mandarin Chinese,NA,f,f,NA
+mandarin,16,spa,Mandarin Chinese,NA,j,j ʝ,NA
+mandarin,16,spa,Mandarin Chinese,NA,k,k ɡ,NA
+mandarin,16,spa,Mandarin Chinese,NA,kʰ,kʰ kʰ,NA
+mandarin,16,spa,Mandarin Chinese,NA,l,l,NA
+mandarin,16,spa,Mandarin Chinese,NA,m,m m̩,NA
+mandarin,16,spa,Mandarin Chinese,NA,n,ɱ n,NA
+mandarin,16,spa,Mandarin Chinese,NA,p,b p,NA
+mandarin,16,spa,Mandarin Chinese,NA,pʰ,pʰ pʰ,NA
+mandarin,16,spa,Mandarin Chinese,NA,s,s,NA
+mandarin,16,spa,Mandarin Chinese,NA,t,t d,NA
+mandarin,16,spa,Mandarin Chinese,NA,ts,dz ts,NA
+mandarin,16,spa,Mandarin Chinese,NA,tsʰ,tsʰ tsʰ,NA
+mandarin,16,spa,Mandarin Chinese,NA,tʰ,tʰ tʰ,NA
+mandarin,16,spa,Mandarin Chinese,NA,w,w ʋ,NA
+mandarin,16,spa,Mandarin Chinese,NA,w˞,w˞,NA
+mandarin,16,spa,Mandarin Chinese,NA,ç,ç,NA
+mandarin,16,spa,Mandarin Chinese,NA,ŋ,ŋ ŋ,NA
+mandarin,16,spa,Mandarin Chinese,NA,ɥ,ʝʷ ɥ,NA
+mandarin,16,spa,Mandarin Chinese,NA,ɰ,ʔ ʁ̞ ɰ ɰ,NA
+mandarin,16,spa,Mandarin Chinese,NA,ʂ,ʂ,NA
+mandarin,16,spa,Mandarin Chinese,NA,ʈʂ,ɖʐ ʈʂ,NA
+mandarin,16,spa,Mandarin Chinese,NA,ʈʂʰ,ʈʂʰ ʈʂʰ,NA
+mandarin,16,spa,Mandarin Chinese,NA,ʐ,ʐ,NA
+mandarin,16,spa,Mandarin Chinese,NA,χ,χ h,NA
+spanish,164,spa,Spanish,NA,f,f,NA
+spanish,164,spa,Spanish,NA,j,ç ɟʝ ʝ j,NA
+spanish,164,spa,Spanish,NA,k,k k̚,NA
+spanish,164,spa,Spanish,NA,l,l̪ l ʎ̟ l̪,NA
+spanish,164,spa,Spanish,NA,m,m ɱ,NA
+spanish,164,spa,Spanish,NA,n,ŋ n̪ n n̪,NA
+spanish,164,spa,Spanish,NA,p,p p̚,NA
+spanish,164,spa,Spanish,NA,r,r z͇,NA
+spanish,164,spa,Spanish,NA,s,z s,NA
+spanish,164,spa,Spanish,NA,t,t̪ t,NA
+spanish,164,spa,Spanish,NA,t̠ʃ,t̠ʃ,NA
+spanish,164,spa,Spanish,NA,w,βˠ ɣʷ w,NA
+spanish,164,spa,Spanish,NA,x,x,NA
+spanish,164,spa,Spanish,NA,ð͉,ð͉ d ð͉,NA
+spanish,164,spa,Spanish,NA,ɣ,ɣ ɡ ɣ,NA
+spanish,164,spa,Spanish,NA,ɲ,ɲ,NA
+spanish,164,spa,Spanish,NA,ɾ,ɾ z͇̥,NA
+spanish,164,spa,Spanish,NA,ʎ,ʎ,NA
+spanish,164,spa,Spanish,NA,β,β β b b̚,NA
+spanish,164,spa,Spanish,NA,θ,ð θ,NA
+vietnamese,15,spa,Vietnamese,NA,c,c c̚,NA
+vietnamese,15,spa,Vietnamese,NA,f,f,NA
+vietnamese,15,spa,Vietnamese,NA,h,h,NA
+vietnamese,15,spa,Vietnamese,NA,j,j,NA
+vietnamese,15,spa,Vietnamese,NA,k,k̚ʷ kp̚ k̚ k,NA
+vietnamese,15,spa,Vietnamese,NA,l,l,NA
+vietnamese,15,spa,Vietnamese,NA,m,m,NA
+vietnamese,15,spa,Vietnamese,NA,n,n,NA
+vietnamese,15,spa,Vietnamese,NA,s,s,NA
+vietnamese,15,spa,Vietnamese,NA,t,t̚ t,NA
+vietnamese,15,spa,Vietnamese,NA,tʰ,tʰ,NA
+vietnamese,15,spa,Vietnamese,NA,v,v,NA
+vietnamese,15,spa,Vietnamese,NA,w,w,NA
+vietnamese,15,spa,Vietnamese,NA,x,kx x,NA
+vietnamese,15,spa,Vietnamese,NA,z,z,NA
+vietnamese,15,spa,Vietnamese,NA,ŋ,ŋm ŋʷ ŋ,NA
+vietnamese,15,spa,Vietnamese,NA,ɓ,ɓ p̚,NA
+vietnamese,15,spa,Vietnamese,NA,ɗ,ɗ,NA
+vietnamese,15,spa,Vietnamese,NA,ɣ,ɡ ɣ,NA
+vietnamese,15,spa,Vietnamese,NA,ɲ,ɲ,NA
+vietnamese,15,spa,Vietnamese,NA,ʔ,ʔ,NA
