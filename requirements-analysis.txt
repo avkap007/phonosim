@@ -1,5 +1,7 @@
 # Exact versions on Avni's Mac when the corpus studies were run (Oct to Nov 2026).
-# Install with: pip install -e . -r requirements-analysis.txt
+# Needs Python 3.11+ (numpy 2.5). Install with: pip install -e . -r requirements-analysis.txt
+# On Python 3.10, pip install -e ".[analysis]" instead: the Nov 17 cross-L1 run reproduces
+# identically with numpy 2.2 / pandas 2.3 (checked Nov 24, 2026).
 panphon==0.22.2
 epitran==1.35.2
 g2p-en==2.1.0
