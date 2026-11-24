@@ -7,22 +7,26 @@ window.CONFIG = {
 
   // AXB task
   RESPONSE_KEYS: { first: "f", last: "j" },
-  AXB_REPS: 1,             // times each AXB file is played (1 x 192 test trials ~ 18 min)
-  BLOCK_SIZE: 48,          // trials between breaks
+  AXB_REPS: 1,             // times each AXB file is played (192 test + 12 catch trials)
+  BLOCK_SIZE: 51,          // trials between breaks (204 / 4 blocks)
+  ITI_MS: 500,             // silence after each main AXB trial
   PRACTICE_REPS: 1,        // 8 practice trials with feedback
 
-  // Headphone check (Woods et al. 2017): pass if at least this many of 6 correct
-  HEADPHONE_PASS: 5,
+  // Headphone check. Default is Huggins pitch (Milne et al. 2021), whose authors
+  // recommend 6 of 6. If you rebuild with --headphone-test antiphase (Woods et al. 2017),
+  // set this to 5.
+  HEADPHONE_PASS: 6,
   HEADPHONE_ATTEMPTS: 2,   // CONFIRM: allow one retry before screening out
 
-  // Sound-matching task: 15 aCa tokens x 2 recordings = 30 trials
+  // Sound-matching task: 13 aCa syllables x 3 recordings = 39 trials
   ASSIM_ENABLED: true,
 
   // Hindi response options for the sound-matching task (needs piloting, CONFIRM)
   HINDI_OPTIONS: [
     ["व", "va"], ["ब", "ba"], ["भ", "bha"], ["प", "pa"], ["फ", "pha"], ["फ़", "fa"],
     ["त", "ta"], ["थ", "tha"], ["ट", "Ta"], ["द", "da"], ["ध", "dha"], ["ड", "Da"],
-    ["ड़", "Ra"], ["र", "ra"], ["ज", "ja"], ["ज़", "za"], ["झ", "jha"], ["स", "sa"], ["श", "sha"]
+    ["ड़", "Ra"], ["र", "ra"], ["ज", "ja"], ["ज़", "za"], ["झ", "jha"], ["स", "sa"], ["श", "sha"],
+    ["य", "ya"]   // added Nov 24: the automatic map predicts w and ɹ -> j
   ],
   NONE_LABEL: "None of these",
 

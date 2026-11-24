@@ -1,0 +1,89 @@
+word,ipa,tokens,files
+aba,aba,2,aba_t1.wav aba_t2.wav
+ada,ada,3,ada_t1.wav ada_t2.wav ada_t3.wav
+adha,aða,3,adha_t1.wav adha_t2.wav adha_t3.wav
+adhi,aði,2,adhi_t1.wav adhi_t2.wav
+adi,adi,2,adi_t1.wav adi_t2.wav
+adzha,ad͡ʒa,3,adzha_t1.wav adzha_t2.wav adzha_t3.wav
+adzhi,ad͡ʒi,2,adzhi_t1.wav adzhi_t2.wav
+afa,afa,3,afa_t1.wav afa_t2.wav afa_t3.wav
+afi,afi,2,afi_t1.wav afi_t2.wav
+ama,ama,2,ama_t1.wav ama_t2.wav
+ana,ana,2,ana_t1.wav ana_t2.wav
+apa,apa,3,apa_t1.wav apa_t2.wav apa_t3.wav
+apha,apʰa,3,apha_t1.wav apha_t2.wav apha_t3.wav
+aphi,apʰi,2,aphi_t1.wav aphi_t2.wav
+api,api,2,api_t1.wav api_t2.wav
+ara,aɹa,3,ara_t1.wav ara_t2.wav ara_t3.wav
+ari,aɹi,2,ari_t1.wav ari_t2.wav
+arxa,aɽa,3,arxa_t1.wav arxa_t2.wav arxa_t3.wav
+arxi,aɽi,2,arxi_t1.wav arxi_t2.wav
+asa,asa,2,asa_t1.wav asa_t2.wav
+ata,ata,3,ata_t1.wav ata_t2.wav ata_t3.wav
+atha,aθa,3,atha_t1.wav atha_t2.wav atha_t3.wav
+athi,aθi,2,athi_t1.wav athi_t2.wav
+ati,ati,2,ati_t1.wav ati_t2.wav
+ava,ava,3,ava_t1.wav ava_t2.wav ava_t3.wav
+avi,avi,2,avi_t1.wav avi_t2.wav
+awa,awa,3,awa_t1.wav awa_t2.wav awa_t3.wav
+awi,awi,2,awi_t1.wav awi_t2.wav
+azha,aʒa,3,azha_t1.wav azha_t2.wav azha_t3.wav
+azhi,aʒi,2,azhi_t1.wav azhi_t2.wav
+ede,ede,2,ede_t1.wav ede_t2.wav
+edhe,eðe,2,edhe_t1.wav edhe_t2.wav
+edzhe,ed͡ʒe,2,edzhe_t1.wav edzhe_t2.wav
+efe,efe,2,efe_t1.wav efe_t2.wav
+epe,epe,2,epe_t1.wav epe_t2.wav
+ephe,epʰe,2,ephe_t1.wav ephe_t2.wav
+ere,eɹe,2,ere_t1.wav ere_t2.wav
+erxe,eɽe,2,erxe_t1.wav erxe_t2.wav
+ete,ete,2,ete_t1.wav ete_t2.wav
+ethe,eθe,2,ethe_t1.wav ethe_t2.wav
+eve,eve,2,eve_t1.wav eve_t2.wav
+ewe,ewe,2,ewe_t1.wav ewe_t2.wav
+ezhe,eʒe,2,ezhe_t1.wav ezhe_t2.wav
+ibi,ibi,2,ibi_t1.wav ibi_t2.wav
+idhi,iði,2,idhi_t1.wav idhi_t2.wav
+idi,idi,2,idi_t1.wav idi_t2.wav
+idzhi,id͡ʒi,2,idzhi_t1.wav idzhi_t2.wav
+ifi,ifi,2,ifi_t1.wav ifi_t2.wav
+imi,imi,2,imi_t1.wav imi_t2.wav
+ini,ini,2,ini_t1.wav ini_t2.wav
+iphi,ipʰi,2,iphi_t1.wav iphi_t2.wav
+ipi,ipi,2,ipi_t1.wav ipi_t2.wav
+iri,iɹi,2,iri_t1.wav iri_t2.wav
+irxi,iɽi,2,irxi_t1.wav irxi_t2.wav
+isi,isi,2,isi_t1.wav isi_t2.wav
+ithi,iθi,2,ithi_t1.wav ithi_t2.wav
+iti,iti,2,iti_t1.wav iti_t2.wav
+ivi,ivi,2,ivi_t1.wav ivi_t2.wav
+iwi,iwi,2,iwi_t1.wav iwi_t2.wav
+izhi,iʒi,2,izhi_t1.wav izhi_t2.wav
+odho,oðo,2,odho_t1.wav odho_t2.wav
+odo,odo,2,odo_t1.wav odo_t2.wav
+odzho,od͡ʒo,2,odzho_t1.wav odzho_t2.wav
+ofo,ofo,2,ofo_t1.wav ofo_t2.wav
+opho,opʰo,2,opho_t1.wav opho_t2.wav
+opo,opo,2,opo_t1.wav opo_t2.wav
+oro,oɹo,2,oro_t1.wav oro_t2.wav
+orxo,oɽo,2,orxo_t1.wav orxo_t2.wav
+otho,oθo,2,otho_t1.wav otho_t2.wav
+oto,oto,2,oto_t1.wav oto_t2.wav
+ovo,ovo,2,ovo_t1.wav ovo_t2.wav
+owo,owo,2,owo_t1.wav owo_t2.wav
+ozho,oʒo,2,ozho_t1.wav ozho_t2.wav
+udhu,uðu,2,udhu_t1.wav udhu_t2.wav
+udu,udu,2,udu_t1.wav udu_t2.wav
+udzhu,ud͡ʒu,2,udzhu_t1.wav udzhu_t2.wav
+ufu,ufu,2,ufu_t1.wav ufu_t2.wav
+unu,unu,2,unu_t1.wav unu_t2.wav
+uphu,upʰu,2,uphu_t1.wav uphu_t2.wav
+upu,upu,2,upu_t1.wav upu_t2.wav
+uru,uɹu,2,uru_t1.wav uru_t2.wav
+urxu,uɽu,2,urxu_t1.wav urxu_t2.wav
+usu,usu,2,usu_t1.wav usu_t2.wav
+uthu,uθu,2,uthu_t1.wav uthu_t2.wav
+utu,utu,2,utu_t1.wav utu_t2.wav
+uvu,uvu,2,uvu_t1.wav uvu_t2.wav
+uwu,uwu,2,uwu_t1.wav uwu_t2.wav
+uzhu,uʒu,2,uzhu_t1.wav uzhu_t2.wav

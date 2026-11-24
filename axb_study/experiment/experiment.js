@@ -1,8 +1,12 @@
 // AXB discrimination + sound-matching study for Hindi-L1 listeners (SFU study 30004064).
-// Runs on JATOS (recruited via Prolific). Opened as a plain file it runs in local test
+// Runs on JATOS (recruited via Prolific). Opened outside JATOS it runs in local test
 // mode and downloads the data at the end instead of submitting it.
+//
+// Data on JATOS: one JSON object per trial, one per line (NDJSON). Rows are appended
+// after each section and block, so a participant who drops out partway still leaves
+// the data collected so far (see the consent text on partial data).
 
-const VERSION = "2026-11-09";
+const VERSION = "2026-11-24";
 const LOCAL = typeof window.jatos === "undefined";
 
 function start() {
@@ -32,6 +36,17 @@ function start() {
   // ?quick=1 runs a short version (6 AXB trials, 4 sound-matching) for piloting the flow
   const QUICK = params.get("quick") === "1";
 
+  // ---- incremental saving ------------------------------------------------
+  let nSaved = 0;
+  const saveNew = () => {
+    const rows = jsPsych.data.get().values().slice(nSaved);
+    nSaved += rows.length;
+    if (LOCAL || rows.length === 0) return Promise.resolve();
+    return jatos.appendResultData(rows.map((r) => JSON.stringify(r)).join("\n") + "\n");
+  };
+  window.__saveNew = saveNew;
+  const checkpoint = { type: jsPsychCallFunction, func: () => { saveNew().catch(() => {}); } };
+
   // ---- 1. device check and consent -------------------------------------
   timeline.push({
     type: jsPsychBrowserCheck,
@@ -58,13 +73,15 @@ function start() {
     button_label: "Continue",
     data: { task: "background" },
   });
-  timeline.push(progress(0.1));
+  timeline.push(checkpoint, progress(0.1));
 
   // ---- 3. volume and headphone check ------------------------------------
+  const huggins = STIM.headphone_test === "huggins";
   const hpFiles = STIM.headphone.map((t) => t.file);
   timeline.push({
     type: jsPsychPreload,
-    audio: ["audio/calibration.wav", ...hpFiles, ...STIM.axb.filter((t) => t.practice).map((t) => t.file)],
+    audio: ["audio/calibration.wav", ...hpFiles, ...(huggins ? ["audio/headphone/hp_example.wav"] : []),
+            ...STIM.axb.filter((t) => t.practice).map((t) => t.file)],
     message: "<p>Loading sounds...</p>",
     data: { task: "preload_1" },
   });
@@ -85,18 +102,30 @@ function start() {
     const rows = jsPsych.data.get().filter({ task: "headphone", attempt: hpAttempt }).values();
     return rows.filter((r) => r.correct).length >= CONFIG.HEADPHONE_PASS;
   };
+  const hpExample = huggins ? [{
+    timeline: [{
+      type: jsPsychAudioButtonResponse,
+      stimulus: "audio/headphone/hp_example.wav",
+      prompt: TEXT.headphoneExample,
+      choices: ["Play again", "Continue"],
+      response_allowed_while_playing: false,
+      data: { task: "headphone_example" },
+    }],
+    loop_function: (d) => d.values()[0].response === 0,
+  }] : [];
   timeline.push({
     timeline: [
       { type: jsPsychCallFunction, func: () => { hpAttempt += 1; } },
-      { type: jsPsychHtmlButtonResponse, stimulus: TEXT.headphoneIntro, choices: ["Start"] },
+      { type: jsPsychHtmlButtonResponse, stimulus: TEXT.headphoneIntro(huggins), choices: ["Start"] },
+      ...hpExample,
       {
         timeline: jsPsych.randomization.shuffle(STIM.headphone).map((t) => ({
           type: jsPsychAudioButtonResponse,
           stimulus: t.file,
           choices: ["1", "2", "3"],
-          prompt: "<p>Which tone was the quietest?</p>",
+          prompt: TEXT.headphonePrompt(huggins),
           response_allowed_while_playing: false,
-          data: { task: "headphone", file: t.file, answer: t.answer },
+          data: { task: "headphone", file: t.file, answer: t.answer, headphone_test: STIM.headphone_test },
           on_finish: (d) => { d.attempt = hpAttempt; d.correct = String(d.response + 1) === d.answer; },
         })),
       },
@@ -118,19 +147,23 @@ function start() {
     ],
     loop_function: () => !hpPassed() && hpAttempt < CONFIG.HEADPHONE_ATTEMPTS,
   });
-  timeline.push(progress(0.2));
+  timeline.push(checkpoint, progress(0.2));
 
   // ---- 4. AXB discrimination --------------------------------------------
+  // Responses are only allowed once the audio has ended. jsPsych's rt is measured from
+  // the start of the trial, so rt_from_b_offset (rt minus the end of B) is the RT to use.
   const axbTrial = (t, practice, block = 0) => ({
     type: jsPsychAudioKeyboardResponse,
     stimulus: t.file,
     choices: [K.first, K.last],
     prompt: TEXT.axbPrompt(K),
     response_allowed_while_playing: false,
+    post_trial_gap: practice ? 0 : CONFIG.ITI_MS,
     data: { ...t, task: practice ? "axb_practice" : "axb", block },
     on_finish: (d) => {
       d.response_side = d.response === K.first ? "first" : "last";
       d.correct = d.response_side === d.answer;
+      d.rt_from_b_offset = d.rt === null ? null : d.rt - d.b_offset_ms;
     },
   });
   const feedback = {
@@ -138,7 +171,7 @@ function start() {
     stimulus: () => {
       const last = jsPsych.data.get().last(1).values()[0];
       return last.correct ? '<p class="fb good">Correct</p>'
-        : `<p class="fb bad">Not quite: the middle word matched the <b>${last.answer}</b> word</p>`;
+        : `<p class="fb bad">Not quite: the middle sound matched the <b>${last.answer}</b> one</p>`;
     },
     choices: "NO_KEYS",
     trial_duration: 1200,
@@ -152,6 +185,8 @@ function start() {
   });
   timeline.push({ type: jsPsychHtmlButtonResponse, stimulus: TEXT.axbMainStart, choices: ["Start"] });
 
+  // Test trials and catch trials (easy n-s pairs, for the attention exclusion rule)
+  // are shuffled together, so catch trials can't be told apart by position.
   const test = STIM.axb.filter((t) => !t.practice);
   const mainAudio = [...test.map((t) => t.file), ...STIM.assim.map((t) => t.file)];
   timeline.push({
@@ -168,7 +203,7 @@ function start() {
     const block = ordered.slice(b * CONFIG.BLOCK_SIZE, (b + 1) * CONFIG.BLOCK_SIZE)
       .map((t) => axbTrial(t, false, b + 1));
     timeline.push({ timeline: block });
-    timeline.push(progress(0.25 + 0.5 * (b + 1) / nBlocks));
+    timeline.push(checkpoint, progress(0.25 + 0.5 * (b + 1) / nBlocks));
     if (b < nBlocks - 1) {
       timeline.push({ type: jsPsychHtmlButtonResponse, stimulus: TEXT.breakScreen(b + 1, nBlocks),
                       choices: ["Continue"], data: { task: "break" } });
@@ -181,8 +216,10 @@ function start() {
       `<span class="dev">${dev}</span><span class="rom">${rom}</span>`);
     const labels = [...CONFIG.HINDI_OPTIONS.map(([dev]) => dev), CONFIG.NONE_LABEL];
     timeline.push({ type: jsPsychHtmlButtonResponse, stimulus: TEXT.assimIntro, choices: ["Start"] });
+    const assimOrder = jsPsych.randomization.shuffleNoRepeats(STIM.assim, (a, b) => a.phone === b.phone)
+      .slice(0, QUICK ? 4 : undefined);
     timeline.push({
-      timeline: jsPsych.randomization.shuffle(STIM.assim).slice(0, QUICK ? 4 : undefined).flatMap((t) => [
+      timeline: assimOrder.flatMap((t) => [
         {
           type: jsPsychAudioButtonResponse,
           stimulus: t.file,
@@ -207,6 +244,7 @@ function start() {
         },
       ]),
     });
+    timeline.push(checkpoint);
   }
   timeline.push(progress(0.95));
 
@@ -217,29 +255,28 @@ function start() {
                   choices: ["Finish and return to Prolific"], data: { task: "debrief" } });
 
   jsPsych.run(timeline);
-}
 
-function finish(jsPsych, ending, participant, prolific) {
-  const code = { complete: CONFIG.PROLIFIC_COMPLETE_CODE, screenout: CONFIG.PROLIFIC_SCREENOUT_CODE,
-                 noconsent: CONFIG.PROLIFIC_NOCONSENT_CODE }[ending];
-  const url = `https://app.prolific.com/submissions/complete?cc=${code}`;
-  const idLink = JSON.stringify({ participant, ending, ...prolific });
-  const csv = jsPsych.data.get().csv();
+  function finish(jsPsych, ending, participant, prolific) {
+    const code = { complete: CONFIG.PROLIFIC_COMPLETE_CODE, screenout: CONFIG.PROLIFIC_SCREENOUT_CODE,
+                   noconsent: CONFIG.PROLIFIC_NOCONSENT_CODE }[ending];
+    const url = `https://app.prolific.com/submissions/complete?cc=${code}`;
+    const idLink = JSON.stringify({ participant, ending, ...prolific });
 
-  if (LOCAL) {
-    if (ending !== "noconsent") jsPsych.data.get().localSave("csv", `axb_${participant}.csv`);
-    document.body.innerHTML = `<div class="page"><h3>Local test finished (${ending})</h3>
-      <p>On JATOS this would now redirect to:<br><code>${url}</code></p>
-      <p>Data downloaded as axb_${participant}.csv. Prolific ID link (stored separately on JATOS):<br>
-      <code>${idLink}</code></p></div>`;
-    return;
+    if (LOCAL) {
+      if (ending !== "noconsent") jsPsych.data.get().localSave("csv", `axb_${participant}.csv`);
+      document.body.innerHTML = `<div class="page"><h3>Local test finished (${ending})</h3>
+        <p>On JATOS this would now redirect to:<br><code>${url}</code></p>
+        <p>Data downloaded as axb_${participant}.csv. Prolific ID link (stored separately on JATOS):<br>
+        <code>${idLink}</code></p></div>`;
+      return;
+    }
+    // Declined consent: save nothing, just return to Prolific.
+    if (ending === "noconsent") { jatos.endStudyAndRedirect(url, true, "no consent"); return; }
+    saveNew()
+      .then(() => jatos.uploadResultFile(idLink, "prolific_id_link.json"))
+      .then(() => jatos.endStudyAndRedirect(url, true, ending))
+      .catch(() => jatos.endStudyAndRedirect(url, false, "save error"));
   }
-  // Declined consent: save nothing, just return to Prolific.
-  if (ending === "noconsent") { jatos.endStudyAndRedirect(url, true, "no consent"); return; }
-  jatos.submitResultData(csv)
-    .then(() => jatos.uploadResultFile(idLink, "prolific_id_link.json"))
-    .then(() => jatos.endStudyAndRedirect(url, true, ending))
-    .catch(() => jatos.endStudyAndRedirect(url, false, "save error"));
 }
 
 if (LOCAL) window.addEventListener("load", start);

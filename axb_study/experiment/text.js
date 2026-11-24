@@ -25,7 +25,9 @@ questionnaire, a headphone check, two listening tasks, and a few final questions
 record your voice or video. The tasks measure the sounds, not how good your English is.</p>
 
 <h3>Is it voluntary?</h3>
-<p>Yes. You can stop at any time by closing this window, with no penalty.</p>
+<p>Yes. You can stop at any time by closing this window, with no penalty. Your answers are
+saved as you go, so if you stop partway, what you answered so far is kept unless you ask us to
+delete it (see "Withdrawing your data" below).</p>
 
 <h3>Risks and benefits</h3>
 <p>The only expected risks are boredom or tiredness; you can take breaks. You may not benefit
@@ -36,8 +38,9 @@ directly, but you will help research on second-language speech perception.</p>
 
 <h3>Privacy</h3>
 <p>We do not collect your name, email or signature. Your answers are stored under a random
-code. Your Prolific ID is used only to pay you and handle withdrawal requests, and is kept
-separately. Data are stored in encrypted SFU storage that only the research team can access.
+code. The study server records your Prolific ID with your session so we can pay you and handle
+withdrawal requests. It is never written into your answers, and we remove it before analysing
+or sharing any data. Data are stored in encrypted SFU storage that only the research team can access.
 Results are reported only as group averages. De-identified data may be shared in an open
 repository (such as OSF) for other researchers.</p>
 
@@ -98,9 +101,22 @@ TEXT.volume = `<div class="page"><h3>Set your volume</h3>
 <p>Put on your headphones. Press <b>Play</b> and set your computer's volume so the tone is
 clear and comfortable, not loud. You can play it as many times as you like.</p></div>`;
 
-TEXT.headphoneIntro = `<div class="page"><h3>Headphone check</h3>
+TEXT.headphoneIntro = (huggins) => huggins
+  ? `<div class="page"><h3>Headphone check</h3>
+<p>You will hear three bursts of noise, like static. In one of them there is a faint tone
+hidden in the noise. Click which one had the tone: 1, 2 or 3.</p>
+<p>Each sound plays once, so listen carefully. There are 6 of these. First, an example of what
+the tone sounds like.</p></div>`
+  : `<div class="page"><h3>Headphone check</h3>
 <p>You will hear three tones. Click which one was the <b>quietest</b>: 1, 2 or 3.
 Each sound plays once, so listen carefully. There are 6 of these.</p></div>`;
+
+TEXT.headphoneExample = `<p>This noise has the faint tone in it. You may need to listen closely.
+Play it again as often as you like.</p>`;
+
+TEXT.headphonePrompt = (huggins) => huggins
+  ? "<p>Which noise had the faint tone in it?</p>"
+  : "<p>Which tone was the quietest?</p>";
 
 TEXT.headphoneFail = (last) => last
   ? `<div class="page"><p>It looks like you may not be wearing headphones, which this study needs.
@@ -109,11 +125,11 @@ TEXT.headphoneFail = (last) => last
      plugged in and on both ears, then try once more.</p></div>`;
 
 TEXT.axbIntro = (k) => `<div class="page"><h3>Listening task 1</h3>
-<p>On each trial you will hear three words. The <b>middle</b> word is the same as either the
-<b>first</b> word or the <b>last</b> word.</p>
-<p>Press <b>${k.first.toUpperCase()}</b> if the middle word matches the <b>first</b>,
+<p>On each trial you will hear three made-up words, like "ava". The <b>middle</b> one has the
+same consonant as either the <b>first</b> or the <b>last</b> one.</p>
+<p>Press <b>${k.first.toUpperCase()}</b> if the middle matches the <b>first</b>,
 or <b>${k.last.toUpperCase()}</b> if it matches the <b>last</b>.</p>
-<p>The voices may differ slightly; listen for the sounds. Some trials are hard. Just give your
+<p>The recordings differ slightly each time; listen for the consonant. Some trials are hard. Just give your
 best guess. First, a few practice trials with feedback.</p></div>`;
 
 TEXT.axbPrompt = (k) => `<p class="prompt">Middle matches: <b>${k.first.toUpperCase()}</b> = first &nbsp;&nbsp; <b>${k.last.toUpperCase()}</b> = last</p>`;

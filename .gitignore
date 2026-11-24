@@ -35,3 +35,6 @@ axb_study/experiment/audio/
 axb_study/experiment/stimuli/trials.js
 axb_study/power/*.rds
 .phoible/
+axb_study/experiment/jatos.js
+axb_study/analysis/fake_data/
+axb_study/analysis/results*/
