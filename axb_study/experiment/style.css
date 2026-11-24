@@ -1,0 +1,14 @@
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+.page { max-width: 720px; margin: 0 auto; text-align: left; line-height: 1.5; }
+.page h2, .page h3 { margin-top: 1.2em; }
+.meta { color: #666; font-size: 0.9em; }
+.form label { display: block; margin: 0.8em 0; }
+.form input, .form select, .form textarea { display: block; margin-top: 0.3em; padding: 6px;
+  font-size: 1em; width: 100%; max-width: 420px; box-sizing: border-box; }
+.prompt { margin-top: 2em; font-size: 1.1em; }
+.fb { font-size: 1.4em; }
+.fb.good { color: #1a7f37; }
+.fb.bad { color: #b42318; }
+.dev { display: block; font-size: 1.6em; line-height: 1.2; }
+.rom { display: block; font-size: 0.75em; color: #666; }
+.jspsych-btn { min-width: 64px; }

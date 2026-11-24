@@ -19,3 +19,19 @@ icphs2027/results*/
 icphs2027/phones*.csv
 # Working notes, keep local
 icphs2027/ANALYSIS_PLAN.md
+
+# Private or personal files: never commit
+*Transcript*.pdf
+draft-answers-protocol.pdf
+Re__COGS_491_*
+COGS_Honours_*Timeline*.csv
+papers/
+# Downloaded templates and old zips
+324e8e0acae14c4ea7be64dbdb45b8a1.zip
+axb_study.zip
+# Study outputs and generated experiment files
+crossl1/results*/
+axb_study/experiment/audio/
+axb_study/experiment/stimuli/trials.js
+axb_study/power/*.rds
+.phoible/

@@ -4,21 +4,26 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "phonosim"
-version = "0.1.0"
+version = "0.2.0"
 description = "Researcher-facing phonetic similarity toolkit: Epitran → PanPhon → Hindi L1 cue-weighting → stimuli"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Avni Kapoor" }]
+# panphon is pinned exactly: a new PanPhon release can change feature values and
+# therefore the locked distances (p/ph 1/24, v/w 7/24, retroflex flap/r 6/24).
+# tests/test_core.py fails if that happens.
 dependencies = [
-  "panphon>=0.22",
-  "epitran>=1.25",
-  "PyYAML>=6.0",
-  "g2p-en>=2.1.0",
+  "panphon==0.22.2",
+  "epitran==1.35.2",
+  "g2p-en==2.1.0",
+  "PyYAML>=6.0,<7",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+# For the corpus studies (icphs2027/, crossl1/). Exact versions used are in requirements-analysis.txt.
+analysis = ["numpy>=2.0", "pandas>=2.2", "scipy>=1.13", "statsmodels>=0.14", "matplotlib>=3.8"]
 
 [tool.setuptools.packages.find]
 include = ["phonosim*"]

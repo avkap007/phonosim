@@ -1,0 +1,51 @@
+contrast,pair_id,word_a,word_b,ipa_a,ipa_b,note
+practice,p1,bat,mat,bæt,mæt,practice only (easy contrast)
+practice,p2,bee,me,biː,miː,practice only (easy contrast)
+v-w,vw1,vine,wine,vaɪn,waɪn,
+v-w,vw2,vest,west,vɛst,wɛst,
+v-w,vw3,vet,wet,vɛt,wɛt,
+v-w,vw4,veil,wail,veɪl,weɪl,
+v-w,vw5,vary,wary,vɛɹi,wɛɹi,
+v-w,vw6,verse,worse,vɝs,wɝs,
+p-ph,pph1,apa,apha,apa,apʰa,VCV; p vs ph is not an English contrast
+p-ph,pph2,ipi,iphi,ipi,ipʰi,VCV
+p-ph,pph3,upu,uphu,upu,upʰu,VCV
+p-ph,pph4,pa,pha,pa,pʰa,CV
+p-ph,pph5,pi,phi,pi,pʰi,CV
+p-ph,pph6,pu,phu,pu,pʰu,CV
+r-retroflex,rr1,ara,aRa,aɹa,aɽa,VCV; needs a talker who produces both
+r-retroflex,rr2,iri,iRi,iɹi,iɽi,VCV
+r-retroflex,rr3,uru,uRu,uɹu,uɽu,VCV
+r-retroflex,rr4,ar,aR,aɹ,aɽ,VC
+r-retroflex,rr5,ir,iR,iɹ,iɽ,VC
+r-retroflex,rr6,ur,uR,uɹ,uɽ,VC
+zh-dzh,zj1,azha,aja,aʒa,ad͡ʒa,VCV; no good English word pairs
+zh-dzh,zj2,izhi,iji,iʒi,id͡ʒi,VCV
+zh-dzh,zj3,uzhu,uju,uʒu,ud͡ʒu,VCV
+zh-dzh,zj4,leisure,ledger,lɛʒɚ,lɛd͡ʒɚ,near-minimal
+zh-dzh,zj5,azhe,aje,aʒe,ad͡ʒe,VCV
+zh-dzh,zj6,ozho,ojo,oʒo,od͡ʒo,VCV
+th-t,tht1,thin,tin,θɪn,tɪn,
+th-t,tht2,thank,tank,θæŋk,tæŋk,
+th-t,tht3,thick,tick,θɪk,tɪk,
+th-t,tht4,three,tree,θɹiː,tɹiː,
+th-t,tht5,thigh,tie,θaɪ,taɪ,
+th-t,tht6,thought,taught,θɔt,tɔt,
+dh-d,dhd1,then,den,ðɛn,dɛn,
+dh-d,dhd2,they,day,ðeɪ,deɪ,
+dh-d,dhd3,though,dough,ðoʊ,doʊ,
+dh-d,dhd4,there,dare,ðɛɹ,dɛɹ,
+dh-d,dhd5,those,doze,ðoʊz,doʊz,
+dh-d,dhd6,breathe,breed,bɹiːð,bɹiːd,
+z-dzh,zdj1,zest,jest,zɛst,d͡ʒɛst,
+z-dzh,zdj2,zag,jag,zæɡ,d͡ʒæɡ,
+z-dzh,zdj3,aza,aja,aza,ad͡ʒa,VCV
+z-dzh,zdj4,izi,iji,izi,id͡ʒi,VCV
+z-dzh,zdj5,uzu,uju,uzu,ud͡ʒu,VCV
+z-dzh,zdj6,Zane,Jane,zeɪn,d͡ʒeɪn,names
+s-sh,ssh1,sip,ship,sɪp,ʃɪp,
+s-sh,ssh2,sell,shell,sɛl,ʃɛl,
+s-sh,ssh3,sew,show,soʊ,ʃoʊ,
+s-sh,ssh4,seat,sheet,siːt,ʃiːt,
+s-sh,ssh5,sock,shock,sɑk,ʃɑk,
+s-sh,ssh6,same,shame,seɪm,ʃeɪm,

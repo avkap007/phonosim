@@ -67,8 +67,18 @@ def _arpa_phone_to_ipa(phone: str) -> str:
     return _ARPA_TO_IPA.get(base, "")
 
 
+_NLTK_HELP = (
+    "g2p_en needs NLTK data that a fresh install does not have. Run once:\n"
+    "    python -c \"import nltk; [nltk.download(p) for p in "
+    "('cmudict', 'averaged_perceptron_tagger_eng', 'averaged_perceptron_tagger')]\""
+)
+
+
 def _english_via_g2p(text: str) -> str:
-    tokens = _g2p_en()(text)
+    try:
+        tokens = _g2p_en()(text)
+    except LookupError as err:  # missing NLTK resource
+        raise RuntimeError(_NLTK_HELP) from err
     ipa_parts: list[str] = []
     for tok in tokens:
         if not tok or tok.isspace():
