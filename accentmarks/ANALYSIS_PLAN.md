@@ -60,3 +60,10 @@ Prediction: IRR > 1. V and W excluded.
 
 ## Reporting
 Every estimate is reported whether or not it supports the prediction.
+
+## Deviation log (added after the freeze)
+- Nov 24, 2026, first run: the secondary model splitting `pred_diff` into its two types
+  could not be estimated on the scripted data (singular matrix; at least one subgroup has
+  no Hindi marks), and the crash stopped the script before anything was saved. Secondary
+  models are now wrapped so that a model that cannot be estimated is reported as such.
+  The primary model, data and predictor are unchanged.

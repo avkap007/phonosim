@@ -55,6 +55,15 @@ def fit(formula: str, d: pd.DataFrame):
         cov_type="cluster", cov_kwds={"groups": pd.factorize(d.speaker)[0]})
 
 
+def safe(fn):
+    """Secondary models only: report a model that cannot be estimated instead of crashing
+    (added after the freeze; see the deviation log in ANALYSIS_PLAN.md)."""
+    try:
+        return fn()
+    except Exception as e:  # noqa: BLE001
+        return {"error": f"not estimable: {type(e).__name__}: {e}"}
+
+
 def term(res, name: str) -> dict:
     ci = res.conf_int().loc[name]
     return {"irr": float(np.exp(res.params[name])), "ci_low": float(np.exp(ci[0])),
@@ -79,12 +88,13 @@ def main() -> None:
            "marks_total": int(d.marks.sum()),
            "consonants_used": sorted(d.X.unique().tolist()),
            "primary_no_vw": term(fit(f, no_vw), "is_hindi:pred_diff"),
-           "with_vw": term(fit(f, d), "is_hindi:pred_diff")}
-    r = fit("marks ~ C(X) + is_hindi + is_hindi:diff_cues + is_hindi:no_equiv", no_vw)
-    res["split_types_no_vw"] = {t: term(r, f"is_hindi:{t}") for t in ["diff_cues", "no_equiv"]}
+           "with_vw": safe(lambda: term(fit(f, d), "is_hindi:pred_diff"))}
+    split = "marks ~ C(X) + is_hindi + is_hindi:diff_cues + is_hindi:no_equiv"
+    res["split_types_no_vw"] = safe(lambda: {t: term(fit(split, no_vw), f"is_hindi:{t}")
+                                             for t in ["diff_cues", "no_equiv"]})
     if a.data == "scripted":
-        res["include_l1_specific_no_vw"] = term(fit(f, table(raw)[lambda x: ~x.X.isin(["V", "W"])]),
-                                                "is_hindi:pred_diff")
+        res["include_l1_specific_no_vw"] = safe(lambda: term(
+            fit(f, table(raw)[lambda x: ~x.X.isin(["V", "W"])]), "is_hindi:pred_diff"))
     desc = (d.assign(group=np.where(d.is_hindi == 1, "Hindi", "Other five"))
             .groupby(["X", "type", "group"])[["marks", "tokens"]].sum().reset_index())
     desc["rate"] = desc.marks / desc.tokens
@@ -94,11 +104,14 @@ def main() -> None:
     d.to_csv(out / "speaker_consonant_table.csv", index=False)
     with open(out / "results.json", "w", encoding="utf-8") as fh:
         json.dump(res, fh, indent=2)
-    p = lambda t: f"IRR {t['irr']:.2f} [{t['ci_low']:.2f}, {t['ci_high']:.2f}] p={t['p']:.3g}"
-    print(f"== {a.data}: {res['n_speakers']} speakers, {res['marks_total']} marks")
+    p = lambda t: t["error"] if "error" in t else \
+        f"IRR {t['irr']:.2f} [{t['ci_low']:.2f}, {t['ci_high']:.2f}] p={t['p']:.3g}"
+    print(f"== {a.data}: {res['n_speakers']} speakers, {res['marks_total']} marks, "
+          f"consonants used: {len(res['consonants_used'])}")
     print("Primary (no v/w)  ", p(res["primary_no_vw"]))
     print("With v/w          ", p(res["with_vw"]))
-    for k, v in res["split_types_no_vw"].items():
+    split = res["split_types_no_vw"]
+    for k, v in (split.items() if "error" not in split else [("split", split)]):
         print(f"  {k:10s}       ", p(v))
     if "include_l1_specific_no_vw" in res:
         print("Incl. L1-specific ", p(res["include_l1_specific_no_vw"]))
